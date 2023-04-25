@@ -14,7 +14,7 @@ describe('UI Automation', () => {
     // Click configure button
     itemsPage.elements.configureButton().click()
     // Click next button (engine select)
-    optionalsPage.elements.nextFirstButton().click()
+    optionalsPage.elements.nextButton().click()
     // Click next button (color select)
     optionalsPage.elements.nextButton().click()
     // Click next button (upholstery select)
@@ -22,7 +22,7 @@ describe('UI Automation', () => {
     // Click next button (package select)
     optionalsPage.elements.nextButton().click()
     // Check de reference id
-    summaryPage.elements.referenceIdLocator().contains('SJXPHBHE')
+    summaryPage.elements.referenceIdLocator().contains('SPQOXHH4')
     // Check the download link is visible
     summaryPage.elements.downloadUrlLocator().contains('descarga tu configuración aquí').should('be.visible')
   })

@@ -37,7 +37,7 @@ To execute the tests you can open Cypress in UI mode:
 npx cypress open
 ```
 
-Or you can run it headless using Chrome:
+Or you can run it using headless Chrome if you have this browser installed:
 
 ```sh
 # Start Cypress with headless Chrome
