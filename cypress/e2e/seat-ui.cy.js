@@ -9,7 +9,7 @@ describe('UI Automation', () => {
     homePage.visitSeatCarConfiguratorWeb()
     // Accept cookies message
     homePage.elements.acceptCookiesButton().click()
-    // Select SEAT Ibiza
+    // Select a car
     homePage.elements.selectCar().click()
     // Click configure button
     itemsPage.elements.configureButton().click()
@@ -22,7 +22,7 @@ describe('UI Automation', () => {
     // Click next button (package select)
     optionalsPage.elements.nextButton().click()
     // Check de reference id
-    summaryPage.elements.referenceIdLocator().contains('SPQOXHH4')
+    summaryPage.elements.referenceIdLocator().contains('SJXPHBHE')
     // Check the download link is visible
     summaryPage.elements.downloadUrlLocator().contains('descarga tu configuración aquí').should('be.visible')
   })
