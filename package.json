@@ -1,0 +1,13 @@
+{
+  "name": "ui-automation-seat",
+  "version": "1.0.0",
+  "description": "UI Automation SEAT:CODE",
+  "scripts": {
+    "tests-chrome": "npx cypress run --browser chrome"
+  },
+  "author": "Álvaro Ramírez",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.10.0"
+  }
+}
