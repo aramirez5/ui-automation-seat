@@ -1,24 +1,29 @@
+import homePage from '../pages/homePage'
+import itemsPage from '../pages/itemsPage'
+import optionalsPage from '../pages/optionalsPage'
+import summaryPage from '../pages/summaryPage'
+
 describe('UI Automation', () => {
   it('Visit SEAT Car Configurator and verify that the configuration is available to download with X reference id and have the same result', () => {
     // Visit the SEAT Car Configurator web
-    cy.visit('/')
+    homePage.visitSeatCarConfiguratorWeb()
     // Accept cookies message
-    cy.get('#onetrust-accept-btn-handler').click()
+    homePage.elements.acceptCookiesButton().click()
     // Select SEAT Ibiza
-    cy.get(':nth-child(1) > seat-car-selector-list-item').click()
+    homePage.elements.selectCar().click()
     // Click configure button
-    cy.get(':nth-child(2) > .second-column > .seat-button-text > main').click()
+    itemsPage.elements.configureButton().click()
     // Click next button (engine select)
-    cy.get('[style="transform: translate3d(0px, 0px, 0px); width: 983.2px; height: 80.8px; position: fixed; top: auto; bottom: 0px; left: 0px;"] > seat-price-details-small > :nth-child(2) > seat-button > main').click()
+    optionalsPage.elements.nextFirstButton().click()
     // Click next button (color select)
-    cy.get('footer > seat-price-details-small > :nth-child(2) > seat-button > main').click()
+    optionalsPage.elements.nextButton().click()
     // Click next button (upholstery select)
-    cy.get('footer > seat-price-details-small > :nth-child(2) > seat-button > main').click()
+    optionalsPage.elements.nextButton().click()
     // Click next button (package select)
-    cy.get('footer > seat-price-details-small > :nth-child(2) > seat-button > main').click()
+    optionalsPage.elements.nextButton().click()
     // Check de reference id
-    cy.get('.configuration-key').contains('SJXPHBHE')
+    summaryPage.elements.referenceIdLocator().contains('SPQOXHH4')
     // Check the download link is visible
-    cy.get('.more > .ng-star-inserted').contains('descarga tu configuración aquí').should('be.visible')
+    summaryPage.elements.downloadUrlLocator().contains('descarga tu configuración aquí').should('be.visible')
   })
 })
